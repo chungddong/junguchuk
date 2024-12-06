@@ -1,12 +1,42 @@
+import React, { useState } from 'react';
 import "../css/LoginPage.css";
 
 import SignInputBox from "../component/SignInputBox";
 import { Link } from "react-router-dom";
 
+import { MdOutlineEmail } from "react-icons/md";
+import { MdPassword } from "react-icons/md";
+
+
 
 
 function LoginPage() {
 
+    const [userEmail, setUserEmail] = useState('');
+    const [userPassword, setPassword] = useState('');
+
+    const handleLogin = (e) => {
+        e.preventDefault();
+
+        //서버로 로그인 POST 요청
+        axios.post('/api/login', {
+            email: userEmail,
+            passwd: userPassword
+        },{withCredentials : true})
+            .then((response) => {
+                if (response.data === "Confirm") {
+                    console.log('로그인 성공 :', response.data);
+
+                    window.location.href = '/Main';
+                }
+            })
+            .catch((error) => {
+                console.error('로그인 에러 :', error);
+                // 로그인 실패 처리
+            });
+    };
+
+    
     return (
 
         <div className='Page'>
@@ -16,8 +46,9 @@ function LoginPage() {
                 <div className='LogoBox'>
                     <div className="Logo">
 
+                        <img src="logo.png" width={"100%"}/>
+
                     </div>
-                    AI LOVE VOCA
                 </div>
 
                 <div className='FormBox'>
@@ -36,9 +67,19 @@ function LoginPage() {
 
                     <form className="SignForm" >
 
-                        <SignInputBox onchange={console.log("안녕")}/>
+                        <SignInputBox
+                            icon={MdOutlineEmail}
+                            iconSize={20}
+                            type={"email"}
+                            placeholder={'이메일 입력'}
+                            onchange={(e) => setUserEmail(e.target.value)} />
 
-                        <SignInputBox onchange={console.log("안녕")}/>
+                        <SignInputBox
+                            icon={MdPassword}
+                            iconSize={20}
+                            type={"password"}
+                            placeholder={'비밀번호 입력'}
+                            onchange={(e) => setPassword(e.target.value)} />
 
                         <button type="submit" >로그인</button>
 
@@ -46,7 +87,7 @@ function LoginPage() {
 
                     <div className='FormEtcBox'>
 
-                        계정이 없으신가요? &nbsp; <Link to={"/signup"}>회원가입</Link>
+                        계정이 없으신가요? &nbsp; <a href={"/signup"}>회원가입</a>
 
                     </div>
 

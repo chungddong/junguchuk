@@ -1,0 +1,63 @@
+.Page {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.SignBox {
+    
+    width: 400px;
+
+}
+
+.FormMessage {
+
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.FormTitle {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.FormSubTitle {
+    size: 15px;
+    color: #64748B;
+}
+
+.SignForm > button {
+    width: 100%;
+    height: 50px;
+    border: 0;
+    margin-top: 20px;
+    border-radius: 10px;
+    background-color: #2C5E97;
+    color: white;
+    font-weight: bold;
+}
+
+
+.SignForm > button:hover {
+    cursor: pointer;
+    background-color: #245082;
+}
+
+.FormEtcBox {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 80px;
+}
+
+.FormEtcBox > a {
+    color: #2C5E97;
+    font-weight: bold;
+}

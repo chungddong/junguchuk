@@ -1,0 +1,24 @@
+.MainPage {
+    width: 100%;
+    height: 100%;
+
+    background-color: #FBFBFB;
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+.PageBox {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: row;
+}
+
+.ViewBox {
+    box-sizing: border-box;
+    padding: 20px;
+}
+

@@ -1,0 +1,93 @@
+.SideBar {
+    height: 100%;
+    background-color: white;
+    transition: width 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+.SideBar.expanded {
+    width: 250px; /* 확장된 상태 */
+    
+}
+
+.SideBar.collapsed {
+    width: 80px; /* 축소된 상태 */
+}
+
+
+.SideTitleBox {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #94A3B8;
+    margin-bottom: 20px;
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 15px;
+}
+
+.SideTitleBox:hover {
+    background-color: #ebebeb;
+    cursor: pointer;
+}
+
+.SideTitle {
+    font-size: 1rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+
+/* Navigation Items */
+.NavBox {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.NavItem {
+    font-size: 15px;
+    color: #333;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    padding-left: 12px;
+    cursor: pointer;
+    gap: 10px;
+    transition: background-color 0.2s;
+}
+
+.NavItem.active {
+    background-color: #eaf3ff;
+    color: #007bff;
+}
+
+.NavItem:hover {
+    background-color: #f1f1f1;
+}
+
+/* Logout Section */
+.LogOutBox {
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 15px;
+}
+
+.LogOutBox:hover {
+    background-color: #ebebeb;
+    cursor: pointer;
+}
+
+.LogoutButton {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}

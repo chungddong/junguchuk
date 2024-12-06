@@ -1,19 +1,19 @@
 import "../css/SignInputBox.css"
-import { MdOutlineEmail } from "react-icons/md";
+import { CgSmileNone } from "react-icons/cg";
 
-const SignInputBox = ({ onchange }) => {
+const SignInputBox = ({ icon: Icon, iconSize, type, placeholder, onchange }) => {
 
     return (
 
         <div className="SignInputBox">
             <div className="InputBoxIcon">
 
-                <MdOutlineEmail />
+                {Icon ? <Icon size={iconSize} /> : <CgSmileNone />}
 
             </div>
 
-            <input type="text" className="SignInput"
-                placeholder="테스트" onChange={onchange}>
+            <input type={type} className="SignInput"
+                placeholder={placeholder} onChange={onchange}>
 
             </input>
 
