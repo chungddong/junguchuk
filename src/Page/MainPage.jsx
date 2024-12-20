@@ -4,6 +4,7 @@ import SideBar from "../component/SideBar";
 import DashBoard from "../Page/Dashboard";
 import ShowWord from "../Page/ShowWord";
 import WordGroup from "../Page/WordGroup";
+import DragTest from "../Page/DragTest";
 import "../css/MainPage.css";
 
 function MainPage() {
@@ -13,7 +14,8 @@ function MainPage() {
     const pages = {
         "대시보드": <DashBoard />,
         "단어 보기": <ShowWord />,
-        "단어 그룹": <WordGroup />
+        "단어 그룹": <WordGroup />,
+        "테스트 페이지": <DragTest />
     };
 
     return (

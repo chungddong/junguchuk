@@ -1,0 +1,184 @@
+.PageTitleBox {
+    width: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.PageContentBox {
+    width: 100%;
+    flex: 9;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.WordBox {
+    width: 55%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.Word {
+    width: 100%;
+    height: 70%;
+
+    border-radius: 20px;
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.1);
+
+    background-color: white;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    position: relative; /* Container for absolute positioning of card sides */
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease-in-out;
+}
+
+.cardFront, .cardBack {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.cardBack {
+    transform: rotateY(180deg); /* Initially rotated to the back */
+}
+
+.Word.rotated {
+    transform: rotateY(180deg);
+}
+
+.Word.rotated .cardFront {
+    transform: rotateY(-180deg); /* Rotate front when flipped */
+}
+
+.Word.rotated .cardBack {
+    transform: rotateY(0deg); /* Reset back rotation when flipped */
+}
+
+.WordText {
+    font-size: 70px;
+    font-weight: bold;
+
+    margin-bottom: 40px;
+}
+
+.WordBlurContainer {
+    position: relative;
+    width: fit-content; /* 콘텐츠 크기에 맞게 조정 */
+    height: fit-content;
+}
+
+.WordBlur {
+    font-size: 30px;
+    font-weight: bold;
+    color: #2863AF;
+    z-index: 2; /* BlurOverlay보다 뒤로 배치 */
+    position: relative;
+
+    margin: 20px;
+    user-select: none;
+    pointer-events: none; 
+}
+
+.WordEx {
+    color: #64748B;
+}
+
+.BlurOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    backdrop-filter: blur(13px); /* 블러 강도 설정 */
+    z-index: 9; /* WordBlur 위로 오게 설정 */
+    border-radius: 20px; /* 선택 사항: 모서리를 둥글게 설정 */
+    pointer-events: none; /* 클릭을 통과하도록 설정 */
+}
+
+
+.HintText {
+    font-size: 18px;
+    margin-top: 30px;
+    color: #64748B;
+}
+
+
+.ToolBox {
+    width: 8%;
+    height: 57%;
+    margin-left: 40px;
+
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+    gap: 20px;
+}
+
+
+.ToolBtn {
+    width: 80px;
+    height: 80px;
+    background-color: white;
+
+    border-radius: 100%;
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.1);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #2863AF;
+}
+
+
+.ToolBtn:hover {
+    cursor: pointer;
+    background-color: #cccccc;
+}
+
+
+.CheckGroup {
+    width: 200px;
+    height: 30px;
+    background-color: white;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 7px;
+    gap: 10px;
+    border-radius: 10px;
+
+}
+
+.CheckBox input {
+    width: 18px;
+    height: 18px;
+    
+    border: 3px solid gray;
+}

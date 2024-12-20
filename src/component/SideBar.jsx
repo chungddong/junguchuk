@@ -51,7 +51,15 @@ function SideBar({ selectedNav, setSelectedNav }) {
                     onClick={() => handleNavItemClick("단어 그룹")}
                 >
                     <MdOutlineEventNote />
-                    {isExpanded && <span className="NavText">자료 관리</span>}
+                    {isExpanded && <span className="NavText">단어 그룹</span>}
+                </div>
+
+                <div
+                    className={`NavItem ${selectedNav === "테스트 페이지" ? "active" : ""}`}
+                    onClick={() => handleNavItemClick("테스트 페이지")}
+                >
+                    <MdOutlineEventNote />
+                    {isExpanded && <span className="NavText">테스트 페이지</span>}
                 </div>
             </div>
 
